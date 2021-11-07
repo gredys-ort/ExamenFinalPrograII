@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+    <head th:replace="plantillas/TemplantePie :: head">
+        <meta charset="UTF-8">
+            <title>Detalle</title>
+    </head>
+    <body>
+        <header th:replace="/plantillas/TemplantePie :: header"></header>
+
+
+
+        <div class="container">
+
+            <div class="card bg-light mt-3">
+
+                <div class="container">
+                    <a class="btn btn-primary btn-sm mt-3" th:href="@{/nice/usuarios/nuevo}"
+                       th:text="'Nuevo usuario'" title="Crear nuevo usuario">
+                    </a>
+                </div>
+
+                <div class="card-header bg-dark text-white mt-3" th:text="${titulo}"></div>
+
+                <div class="card-body">
+                    <table class="table table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" class="text-danger">Id</th>
+                                <th scope="col" class="text-danger">Profesión</th>
+                                <th scope="col" class="text-danger">Nombres completos</th>
+                                <th scope="col" class="text-danger">Teléfono</th>
+                                <th scope="col" class="text-danger">Departamento</th>
+                                <th scope="col" colspan="3" class="text-center text-danger">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="us:${usuarios}">
+                                <th scope="row" th:text="${us.id}"></th>
+                                <td th:text="${us.profesion}"></td>
+                                <td th:text="${us.nombreCompleto}" th:tex></td>
+                                <td th:text="${us.telefono}"></td>
+                                <td th:text="${us.direccion}"></td>
+                                <td>
+                                    <a class="btn btn-success btn-sm" th:href="@{/nice/usuarios/editar/} + ${us.id}"
+                                       th:text="'Editar'" title="Editar usuario">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger btn-sm" th:href="@{/nice/usuarios/eliminar/} + ${us.id}"
+                                       th:text="'Eliminar'" title="Eliminar usuario"
+                                       onclick="return confirm('¿Está seguro de eliminar el registro?');">
+                                    </a>
+                                </td>
+
+                                <td>
+                                    <a class="btn btn-info btn-sm" th:href="@{/nice/usuarios/Detalles/} + ${us.id}"
+                                       th:text="'Ver'" title="Ver detalle">
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+        <footer th:replace="/plantillas/TemplantePie :: footer"></footer>
+    </body>
+</html>
+

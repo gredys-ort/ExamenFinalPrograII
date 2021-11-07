@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+    <head th:replace="plantillas/TemplantePie :: head">
+        <meta charset="UTF-8">
+            <title>Registrar usuario</title>
+    </head>
+    <body>
+        <header th:replace="/plantillas/TemplantePie :: header"></header>
+
+        <div class="container">
+
+            <div class="card bg-light mt-3">
+
+                <div class="card-header bg-dark text-white" th:text="${titulo}">
+
+                </div>
+
+                <div class="card-body">
+                    <form th:action="@{/nice/departamentos/save}" th:object="${departamento}" method="post">
+                        <div class="mb-3 row form-group">
+                            <input type="hidden" th:field="*{id}">
+                                <label for="descripcion" class="col-sm-2 col-form-label text-info">Descripción</label>
+                                <div class="col-sm-10">
+                                    <input type="text" th:field="*{descripcion}" class="form-control" id="descripcion" placeholder="Jalapa">
+                                </div>
+                        </div>
+
+
+                        <div class="card-footer bg-dark">
+                            <input type="submit" class="btn btn-primary btn-sm" value="Guardar"/>
+                        </div>
+
+                    </form>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <footer th:replace="/plantillas/TemplantePie :: footer"></footer>
+    </body>
+</html>
+

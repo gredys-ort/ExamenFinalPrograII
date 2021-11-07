@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+    <head th:replace="plantillas/TemplantePie :: head">
+        <meta charset="UTF-8">
+            <title>Detalles</title>
+    </head>
+    <body>
+        <header th:replace="/plantillas/TemplantePie :: header"></header>
+
+        <div class="container">
+
+            <div class="card bg-light mt-3">
+
+                <div class="card-header bg-dark text-white text-center" th:text="'Usuario: ' + ${usuario.nombre} + ' ' + ${usuario.apellido}">
+
+                </div>
+
+                <div class="card-body">
+                    <form th:object="${usuario}" method="post">
+                        <div class="mb-3 row form-group">
+
+
+                            <div class="mb-3 row ">
+                                <label class="col-sm-2 col-form-label"><strong>Profesión:</strong></label>
+                                <div class="col-sm-10">
+                                    <input disabled type="text" th:field="*{profesion.descripcion}" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row ">
+                                <label class="col-sm-2 col-form-label">Teléfono:<strong></strong></label>
+                                <div class="col-sm-10">
+                                    <input disabled type="text" th:field="*{telefono}" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row ">
+                                <label class="col-sm-2 col-form-label"><strong>Correo electrónico:</strong></label>
+                                <div class="col-sm-10">
+                                    <input disabled type="text" th:field="*{correo}" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row ">
+                                <label class="col-sm-2 col-form-label"><strong>Departamento:</strong></label>
+                                <div class="col-sm-10">
+                                    <input disabled type="text" th:field="*{departamento.descripcion}" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row ">
+                                <label class="col-sm-2 col-form-label"><strong>Latitud:</strong></label>
+                                <div class="col-sm-10">
+                                    <input disabled type="text" th:field="*{latitud}" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row ">
+                                <label class="col-sm-2 col-form-label"><strong>Longitud:</strong></label>
+                                <div class="col-sm-10">
+                                    <input disabled type="text" th:field="*{longitud}" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row ">
+                                <label class="col-sm-2 col-form-label"><strong>Fecha de nacimiento::</strong></label>
+                                <div class="col-sm-10">
+                                    <input disabled type="text" th:field="*{nacimiento}" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="mb-3 row ">
+                                <label class="col-sm-2 col-form-label"><strong>Fecha de registro::</strong></label>
+                                <div class="col-sm-10">
+                                    <input disabled type="text" th:field="*{registro}" class="form-control">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <footer th:replace="/plantillas/TemplantePie :: footer"></footer>
+    </body>
+</html>
